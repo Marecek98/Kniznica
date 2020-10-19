@@ -20,12 +20,12 @@ class BookController extends Controller
 
     public function insertBookAction(){
         $book = new Books();
-        //$prev_book = Books::find(1);
         $datum = \Carbon\Carbon::now();
-        $book ->nazov = "Harry Potter";
+        $book->nazov = "Harry Potter";
         $book->autor = "J.K. Rowling";
         $book->datum_vydania = $datum->toDateString();
         $book->pocet_stran = mt_rand(300,800);
+        $book->save();
     }
 
     public function deleteBookAction($id){
@@ -34,9 +34,9 @@ class BookController extends Controller
     }
 
     public function updateBookAction($id){
-        $book = Books::where("id","=",$id)->get();
+        $book = Books::where("id","=",$id)->first();
         $book -> update(["pocet_stran" => mt_rand(300,800),
-                         "autor" => Str::random(1)+"."+Str::random(1)+" Rowling"]);
+                         "autor" => Str::random(1).".".Str::random(1)." Rowling"]);
     }
 
     public function showAllBookAction(){

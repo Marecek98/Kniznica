@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/showBook/{id}', ['as' => 'showBook', 'uses' => 'BookController@showBookAction']);
-Route::get('/insertBook', ['as' => 'insertBook', 'uses' => 'BookController@insertBookAction']);
+Route::get('/insertBook', ['as' => 'insertBook', 'uses' =>  'BookController@insertBookAction']);
 Route::get('/deleteBook/{id}', ['as' => 'deleteBook', 'uses' => 'BookController@deleteBookAction']);
 Route::get('/updateBook/{id}', ['as' => 'updateBook', 'uses' => 'BookController@updateBookAction']);
 Route::get('/showAllBook', ['as' => 'showAllBook', 'uses' => 'BookController@showAllBookAction']);
